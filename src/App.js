@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './Pages/Welcome';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function App() {
   return (
@@ -13,9 +14,6 @@ function App() {
           <Route path='/' element={<Welcome />} />
         </Routes>
       </Router>
-      {/* <Link to='/' style={{ color: 'inherit', textDecoration: 'inherit' }}>
-        아이디 찾기&emsp;&emsp;
-      </Link> */}
     </div>
   );
 }
