@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import TodoTemplate from '../Components/TodoTemplate';
 import TodoHead from '../Components/TodoHead';
+import TodoList from '../Components/TodoList';
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -20,6 +21,7 @@ function Welcome() {
       <GlobalStyle />
       <TodoTemplate>
         <TodoHead />
+        <TodoList />
       </TodoTemplate>
     </>
   );
