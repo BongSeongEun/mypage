@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import styled from 'styled-components';
-
+import TodoItem from './TodoItem';
 const MainWrap = styled.div`
   flex: 1;
   padding: 1.5rem, 2rem;
@@ -9,6 +9,13 @@ const MainWrap = styled.div`
   overflow-y: auto;
 `;
 function TodoList() {
-  return <MainWrap>TodoList</MainWrap>;
+  return (
+    <MainWrap>
+      <TodoItem text='프로젝트 생성하기' done={true} />
+      <TodoItem text='프로젝트 생성하기' done={true} />
+      <TodoItem text='프로젝트 생성하기' done={false} />
+      <TodoItem text='프로젝트 생성하기' done={false} />
+    </MainWrap>
+  );
 }
 export default TodoList;

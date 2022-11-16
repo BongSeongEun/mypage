@@ -11,8 +11,9 @@ const MainWrap = styled.div`
 `;
 const Title = styled.div`
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: #343a40;
+  font-weight: bolder;
 `;
 const Day = styled.div`
   margin-top: 0.25rem;
@@ -22,7 +23,7 @@ const Day = styled.div`
 const NumTask = styled.div`
   color: #20c997;
   font-size: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
   font-weight: bold;
 `;
 function TodoHead() {
