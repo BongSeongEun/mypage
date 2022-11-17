@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TodoItem from './TodoItem';
 import { useState, useEffect } from 'react';
+import { useTodoState } from '../TodoContext';
 
 const MainWrap = styled.div`
   flex: 1;
@@ -12,12 +13,18 @@ const MainWrap = styled.div`
 `;
 
 function TodoList() {
+  const todos = useTodoState();
+
   return (
     <MainWrap>
-      <TodoItem text='프로젝트 생성하기' done={true} />
-      <TodoItem text='프로젝트 생성하기' done={true} />
-      <TodoItem text='프로젝트 생성하기' done={false} />
-      <TodoItem text='프로젝트 생성하기' done={false} />
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          done={todo.done}
+        />
+      ))}
     </MainWrap>
   );
 }

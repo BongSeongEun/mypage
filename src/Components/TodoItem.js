@@ -2,6 +2,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { MdDone, MdDelete } from 'react-icons/md';
+import { useTodoDispatch } from '../TodoContext';
 
 const RemoveButton = styled.div`
   display: flex;
@@ -59,14 +60,19 @@ const Text = styled.div`
 `;
 
 function TodoItem({ id, done, text }) {
+  const dispatch = useTodoDispatch();
+  const onToggle = () => dispatch({ type: 'TOGGLE', id });
+  const onRemove = () => dispatch({ type: 'REMOVE', id });
   return (
     <MainWrap>
-      <CheckBox done={done}>{done && <MdDone />}</CheckBox>
+      <CheckBox done={done} onClick={onToggle}>
+        {done && <MdDone />}
+      </CheckBox>
       <Text done={done}>{text}</Text>
-      <RemoveButton>
+      <RemoveButton onClick={onRemove}>
         <MdDelete />
       </RemoveButton>
     </MainWrap>
   );
 }
-export default TodoItem;
+export default React.memo(TodoItem);

@@ -40,6 +40,8 @@
     ]
   },
   "devDependencies": {
-    "babel-preset-react-app": "^10.0.1"
-  }
+    "babel-preset-react-app": "^10.0.1",
+    "push-dir": "^0.4.1"
+  },
+  "deploy": "push-dir --dir=build --branch=gh-pages --cleanup"
 }
