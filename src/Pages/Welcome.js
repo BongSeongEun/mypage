@@ -2,30 +2,20 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import TodoTemplate from '../Components/TodoTemplate';
-import TodoHead from '../Components/TodoHead';
-import TodoList from '../Components/TodoList';
-import TodoCreate from '../Components/TodoCreate';
-import { TodoProvider } from '../TodoContext';
+import Container from 'react-bootstrap/Container';
+
 const GlobalStyle = createGlobalStyle`
   body{
-    background: #e9ecef;
+    background: #FFCDCD;
   }
 `;
+const MainWrap = styled.div``;
 
 function Welcome() {
   return (
-    <TodoProvider>
+    <MainWrap>
       <GlobalStyle />
-      <TodoTemplate>
-        <TodoHead />
-        <TodoList />
-        <TodoCreate />
-      </TodoTemplate>
-    </TodoProvider>
+    </MainWrap>
   );
 }
 export default Welcome;

@@ -6,6 +6,7 @@ import Welcome from './Pages/Welcome';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { createGlobalStyle } from 'styled-components';
+import TodoList from './Pages/TodoList';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           {/* ---- 메인페이지 ---- */}
           <Route path='/' element={<Welcome />} />
+          <Route path='/TodoList' element={<TodoList />} />
         </Routes>
       </Router>
     </div>
